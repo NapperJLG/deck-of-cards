@@ -25,7 +25,7 @@ const Deck = () => {
 
   return (
     <Container>
-      {deck.map((card) => <Card />)}
+      {deck.map((card) => <Card index={card.index} value={card.value} suit={card.suit} />)}
     </Container>
   )
 
