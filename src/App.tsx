@@ -1,10 +1,10 @@
 import React from 'react';
-import Card from './components/card'
+import Deck from './components/deck'
 
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Deck />
     </div>
   );
 }

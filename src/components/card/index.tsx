@@ -7,4 +7,10 @@ const Card = () => {
   )
 }
 
-export default Card
+export interface CardProps {
+  index: number;
+  suit: string;
+  value: string;
+}
+
+export default Card 
