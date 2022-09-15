@@ -15,7 +15,7 @@ function App() {
   const createDeck = () => {
     const suits = ['clubs', 'diamonds', 'hearts', 'spades']
     const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-    const tempDeck = []
+    let tempDeck = []
 
     for (let x = 0; x < suits.length; x++) {
       for (let y = 0; y < values.length; y++) {
@@ -31,18 +31,18 @@ function App() {
   }
 
   const shuffleDeck = () => {
-    let array = createDeck()
-    let currentIndex = array.length, randomIndex;
+    let newDeck = createDeck()
+    let currentIndex = newDeck.length, randomIndex;
 
     while (currentIndex !== 0) {
 
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
 
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      [newDeck[currentIndex], newDeck[randomIndex]] = [
+        newDeck[randomIndex], newDeck[currentIndex]];
     }
-    setDeck([...array])
+    setDeck([...newDeck])
     setHand([])
   }
 
@@ -62,7 +62,7 @@ function App() {
   }
 
   const sortHand = () => {
-    const tempHand = hand
+    let tempHand = hand
     tempHand.sort((a, b) => a.index - b.index).map((card, index, array) => card.value)
     setHand([...tempHand])
   }
@@ -72,7 +72,7 @@ function App() {
       <CardPile cards={deck} />
       <div className='button-row'>
         <Button onClick={() => shuffleDeck()}>Shuffle</Button>
-        <Button onClick={() => drawCard()}>Draw card</Button>
+        <Button onClick={() => drawCard()}>Draw Card</Button>
         <Button onClick={() => sortHand()}>Sort Hand</Button>
       </div>
       <CardPile cards={hand} />

@@ -5,11 +5,9 @@ import Container from './style'
 const CardPile = (props: { cards: CardProps[] }) => {
 
   return (
-    <React.Fragment>
-      <Container>
-        {props.cards.map((card) => <Card key={card.index} index={card.index} value={card.value} suit={card.suit} />)}
-      </Container>
-    </React.Fragment>
+    <Container>
+      {props.cards.map((card) => <Card key={card.index} index={card.index} value={card.value} suit={card.suit} />)}
+    </Container>
   )
 }
 
