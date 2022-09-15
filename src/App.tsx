@@ -23,10 +23,25 @@ function App() {
     setDeck(indexedDeck)
   }, [])
 
+  const shuffleDeck = () => {
+    let array = deck
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex !== 0) {
+
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    setDeck([...array])
+  }
+
   return (
     <div className="App">
       <Deck deck={deck} />
-      <Button>Shuffle</Button>
+      <Button onClick={() => shuffleDeck()}>Shuffle</Button>
     </div>
   );
 }

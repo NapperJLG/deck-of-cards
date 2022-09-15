@@ -11,7 +11,6 @@ const Deck = (props: { deck: CardProps[] }) => {
       </Container>
     </React.Fragment>
   )
-
 }
 
 export default Deck
