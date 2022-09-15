@@ -1,6 +1,6 @@
 # Deck Of Cards
 
-A web app build with `create-react-app` that displays a full set of 52 cards with buttons to manipulate the deck.
+A web app built with `create-react-app` that displays a full set of 52 cards with buttons to manipulate the deck.
 
 Click [here](https://deck-of-cards-cf376.web.app/) to demo the app or clone the repo and run the command `npm run start`
 
