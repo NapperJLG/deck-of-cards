@@ -68,11 +68,13 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='board'>
       <CardPile cards={deck} />
-      <Button onClick={() => shuffleDeck()}>Shuffle</Button>
-      <Button onClick={() => drawCard()}>Draw card</Button>
-      <Button onClick={() => sortHand()}>Sort Hand</Button>
+      <div className='button-row'>
+        <Button onClick={() => shuffleDeck()}>Shuffle</Button>
+        <Button onClick={() => drawCard()}>Draw card</Button>
+        <Button onClick={() => sortHand()}>Sort Hand</Button>
+      </div>
       <CardPile cards={hand} />
     </div>
   );
